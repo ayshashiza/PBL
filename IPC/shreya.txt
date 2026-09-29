@@ -1,1 +1,54 @@
+SHREYA DAS - 25191151
+MESSAGE PASSING
 
+Message passing is an IPC technique in which processes communicate by sending and receiving messages.
+The processes do not need to share the same memory.
+
+ Working
+Process A
+    ↓
+   Send
+    ↓
+  Message
+    ↓
+  Receive
+    ↓
+Process B
+The sending process creates a message and sends it. The receiving process receives and processes the message.
+
+Basic Operations
+
+Send: Used by a process to send information.
+
+Receive: Used by a process to receive information.
+
+Direct Communication
+
+In direct communication, the sender identifies the receiving process directly.
+Process A → Process B
+
+Indirect Communication
+
+In indirect communication, messages are transferred through an intermediate mailbox or message queue.
+ Process A → Message Queue → Process B
+
+ Example
+
+In a printing system, one process can send a message containing a printing request to another process that controls the printer.
+
+Advantages
+
+•⁠  ⁠Easy and organized communication
+•⁠  ⁠Processes do not need to share memory
+•⁠  ⁠Useful for distributed systems
+•⁠  ⁠Safer separation between processes
+
+Disadvantages
+
+•⁠  ⁠Can be slower than shared memory
+•⁠  ⁠Sending and receiving messages creates some overhead
+•⁠  ⁠Large amounts of data may require more communication operations
+
+Applications
+
+Message passing is commonly used in operating systems, distributed systems, client-server applications, and parallel processing.
