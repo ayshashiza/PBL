@@ -1,1 +1,65 @@
+JOHNATHAN COELHO - 25191123
+IPC TECHNIQUES
+Pipes
 
+A pipe is an IPC mechanism that provides a communication channel through which data can flow from one process to another
+Process A → Pipe → Process B
+One process writes data into the pipe, and another process reads the data.
+
+Pipes are commonly used for communication between related processes.
+
+Advantages
+
+* Simple to implement
+* Easy way to transfer data
+* Useful for short-term communication
+
+Limitation
+
+Ordinary pipes are generally used between processes that have a relationship, such as a parent and child process.
+
+⸻
+
+FIFO
+
+FIFO stands for First In, First Out.
+
+A FIFO, also called a named pipe, is similar to a pipe but has a name in the operating system. This allows processes that are not necessarily related to communicate.
+ Process A → FIFO → Process B
+ Data is normally read in the same order in which it was written.
+
+Advantage
+
+It can allow independent processes to communicate through a named communication channel.
+
+⸻
+
+Signals
+
+A signal is a notification sent to a process to inform it that a particular event has occurred.
+
+For example, when a user presses Ctrl+C in a terminal, a signal can be sent to the running process to request termination.
+
+Signals are mainly used for:
+
+* Notifications
+* Process control
+* Handling events
+* Terminating or interrupting processes
+
+Signals are generally not used for transferring large amounts of data.
+
+⸻
+
+Sockets
+
+A socket is an IPC mechanism that allows processes to communicate locally or across a computer network.
+Computer A                    Computer B
+Process A                     Process B
+   ↓                              ↑
+ Socket ←──── Network ────→ Socket
+
+Example
+When a client application communicates with a server, sockets can be used to exchange requests and responses.
+ Client → Request → Server
+Client ← Response ← Server
