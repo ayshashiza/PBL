@@ -1,1 +1,37 @@
+AYSHA SHIZA - 25191109
+INTER PROCESS COMMUNICATION
 
+Process
+
+A process is a program that is currently being executed by the computer. For example, when we open a browser, music player, or calculator, each running application can have one or more processes.
+
+Inter-Process Communication (IPC)
+
+Inter-Process Communication (IPC) is a mechanism provided by the operating system that allows different processes to exchange data and communicate with each other.
+
+Normally, each process has its own memory space. IPC provides methods through which processes can safely exchange information.
+
+Need for IPC
+
+IPC is required for:
+
+* Sharing data between processes
+* Sharing system resources
+* Coordinating different processes
+* Synchronizing processes
+* Improving performance by dividing work between processes
+
+Example
+
+A web browser may communicate with another process that handles network operations. The processes exchange information using an IPC mechanism.
+
+Main IPC Techniques
+
+The commonly used IPC techniques are:
+
+1. Shared Memory
+2. Message Passing
+3. Pipes
+4. FIFO / Named Pipes
+5. Signals
+6. Sockets
