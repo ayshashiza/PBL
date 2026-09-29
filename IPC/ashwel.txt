@@ -1,1 +1,49 @@
+ASHWEL RUDOLF FERNANDES - 25191104
+SHARED MEMORY
 
+Shared memory is an IPC technique in which two or more processes access the same area of memory to exchange information.
+
+The operating system creates a shared memory region that can be accessed by the participating processes.
+Process A
+    ↓
+ Writes Data
+    ↓
+Shared Memory
+    ↑
+ Reads Data
+    ↑
+Process B
+
+Process A writes information into the shared memory, and Process B reads that information.
+
+Example
+
+Suppose one process collects temperature readings from a sensor.
+
+Another process needs to display those readings.
+
+The first process can store the readings in shared memory, and the second process can read them from there.
+
+Synchronization
+
+When multiple processes access shared memory at the same time, problems can occur. For example, one process may be changing data while another is reading it.
+
+Therefore, synchronization mechanisms such as semaphores and mutexes can be used to control access.
+
+Advantages
+
+* Very fast communication
+* Suitable for large amounts of data
+* Processes can directly access shared data
+* Less communication overhead after the shared memory is established
+
+Disadvantages
+
+* Requires synchronization
+* Incorrect access can cause data inconsistency
+* More difficult to manage than simple message-based communication
+* Security and access permissions must be handled properly
+
+Applications
+
+Shared memory is commonly useful in applications where processes need to exchange large amounts of data quickly.
