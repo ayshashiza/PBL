@@ -121,3 +121,24 @@ The complete flow is:
 UI → Core → CPU/Memory/Stack/Queue → Logger
 
 
+
+
+## IPC Selection and Justification
+
+POSIX Message Queues were selected as the IPC mechanism for this project.
+
+Reasons:
+- Provides communication between independent processes.
+- Supports structured messages between UI, Core, and Logger.
+- Allows asynchronous communication.
+- Provides synchronization through message-based communication.
+- Suitable for a multi-process simulator because processes remain independent.
+
+Communication Flow:
+
+UI Process -> POSIX Message Queue -> Core Process
+Core Process -> POSIX Message Queue -> Logger Process
+
+The UI sends user commands to the Core process. The Core performs the required
+CPU, memory, stack, and queue operations. Important events are sent to the
+Logger process for recording.
