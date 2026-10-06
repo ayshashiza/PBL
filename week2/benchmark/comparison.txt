@@ -1,0 +1,11 @@
+Standalone reference:
+Mode: standalone reference
+Memory: 10 20 30 40
+Registers: ACC=100 PC=4
+Iterations: 10000
+Elapsed seconds: 0.000033
+Result check: 1040000
+Elapsed seconds: 0.00
+
+Three-process simulator (10,000 load/run cycles):
+Elapsed seconds: 3.35
