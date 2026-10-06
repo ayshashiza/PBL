@@ -6,6 +6,10 @@ Iterations: 10000
 Elapsed seconds: 0.000033
 Result check: 1040000
 Elapsed seconds: 0.00
+CPU usage: 0%
+Maximum memory: 1848 KB
 
 Three-process simulator (10,000 load/run cycles):
-Elapsed seconds: 3.35
+Elapsed seconds: 3.31
+CPU usage: 35%
+Maximum memory: 1720 KB

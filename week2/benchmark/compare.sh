@@ -34,13 +34,17 @@ sleep 1
 # Time each workload and save outputs and elapsed times in benchmark/.
 {
     printf 'Standalone reference:\n'
-    /usr/bin/time -f 'Elapsed seconds: %e' \
+    /usr/bin/time -f 'Elapsed seconds: %e
+CPU usage: %P
+Maximum memory: %M KB' \
         -o "$benchmark_dir/standalone_time.txt" \
         "$benchmark_dir/standalone_10000"
     cat "$benchmark_dir/standalone_time.txt"
 
     printf '\nThree-process simulator (10,000 load/run cycles):\n'
-    /usr/bin/time -f 'Elapsed seconds: %e' \
+    /usr/bin/time -f 'Elapsed seconds: %e
+CPU usage: %P
+Maximum memory: %M KB' \
         -o "$benchmark_dir/multiprocess_time.txt" \
         ./ui/ui < "$benchmark_dir/multiprocess_commands.txt" \
         > "$benchmark_dir/multiprocess_output.txt"
