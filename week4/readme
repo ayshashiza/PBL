@@ -1,1 +1,27 @@
+# Deadlock Simulation System — C version
+
+This is a console-based C conversion of the Python/Tkinter project. The algorithmic features are separated into files by team responsibility. The Tkinter visual interface is not directly portable to C, so this version uses a text menu and prints the Resource Allocation Graph as directed edges.
+
+## Team responsibilities
+- Member 1: `main.c` — menu, input, output, integration.
+- Member 2: `bankers.c`, `bankers.h` — safe sequence and request safety checks.
+- Member 3: `detection.c`, `detection.h` — detection and process termination recovery.
+- Member 4: `rag.c`, `rag.h` — resource-allocation graph edge output and documentation.
+- Shared: `state.c`, `state.h` — system data, available/need calculation, validation.
+
+## Compile on Ubuntu / WSL
+From this directory:
+```bash
+gcc -std=c11 -Wall -Wextra main.c state.c bankers.c detection.c rag.c -o deadlock_sim
+./deadlock_sim
+```
+
+## Notes
+- Starts with the classic 5-process, 3-resource sample.
+- Option 2 runs Banker's Algorithm.
+- Option 3 tests a resource request.
+- Option 4 runs the multiple-instance detection algorithm.
+- Option 5 terminates a selected process and releases its allocation.
+- Option 6 prints directed RAG edges.
+- Option 1 prints total/available resources and all matrices.
 
