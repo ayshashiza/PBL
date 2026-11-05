@@ -35,3 +35,106 @@ The commonly used IPC techniques are:
 4. FIFO / Named Pipes
 5. Signals
 6. Sockets
+
+
+signals
+## 1. SIGNALS
+
+### Definition
+
+A signal is an Inter-Process Communication (IPC) mechanism used to notify a process that a particular event has occurred.
+
+Signals are software notifications sent to a process by the operating system or another process. They are mainly used for process control and event handling.
+
+### Working
+
+1. A process receives a signal when a particular event occurs.
+2. The operating system delivers the signal to the process.
+3. The process identifies the received signal.
+4. The process performs a predefined action when the signal is received.
+
+### Examples of Signals
+
+- SIGINT: Terminates a process when the user presses Ctrl + C.
+- SIGKILL: Immediately terminates a process.
+- SIGSTOP: Stops the execution of a process.
+- SIGTERM: Requests a process to terminate.
+- SIGALRM: Generates a signal when a timer expires.
+
+### Advantages
+
+- Helps in process communication.
+- Supports event handling.
+- Allows processes to be interrupted or terminated.
+- Provides a simple mechanism for process control.
+
+Process A
+           |
+           |
+     Sends Signal
+           |
+           ↓
+       Process B
+           |
+           |
+    Receives Signal
+           |
+           ↓
+     Signal Handler
+           |
+           ↓
+     Performs Action
+
+## 2. SOCKETS
+
+### Definition
+
+A socket is an Inter-Process Communication (IPC) mechanism that allows two processes to communicate with each other.
+
+Sockets support communication between processes running on the same computer or on different computers connected through a network.
+
+They are commonly used in client-server applications.
+
+### Working
+
+Socket communication generally follows a client-server model.
+
+1. The server creates a socket.
+2. The server waits for connection requests from clients.
+3. The client creates a socket and connects to the server.
+4. Once the connection is established, both processes can exchange data.
+5. After communication is completed, the connection is closed.
+
+### Examples
+
+- Web browsers communicating with web servers.
+- Chat applications.
+- Online gaming.
+- File transfer applications.
+
+### Advantages
+
+- Supports communication between different computers.
+- Allows data exchange over networks.
+- Useful for client-server applications.
+- Supports real-time communication.
+
+In simple words: A socket is an endpoint that allows two processes to send and receive data, either on the same computer or over a network.
+
+CLIENT                         SERVER
+          |                              |
+    Create Socket                  Create Socket
+          |                              |
+          |                         Bind Address
+          |                              |
+          |                         Listen for
+          |                          Connection
+          |                              |
+     Connect --------------------> Accept
+          |                              |
+          |                              |
+      Send Data -----------------> Receive Data
+          |                              |
+     Receive Data <---------------- Send Data
+          |                              |
+       Close                          Close
